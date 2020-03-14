@@ -13,5 +13,16 @@ namespace Hermes
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            ApplySkin();
+        }
+
+        private void ApplySkin()
+        {
+            var uri = new Uri(@".\Resources\Skins\Dark.xaml", UriKind.Relative);
+            var skin = LoadComponent(uri) as ResourceDictionary;
+            Resources.MergedDictionaries.Add(skin);
+        }
     }
 }
