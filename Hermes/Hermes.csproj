@@ -7,4 +7,12 @@
     <StartupObject>Hermes.Program</StartupObject>
   </PropertyGroup>
 
+	<ItemGroup>
+		<Page Include="App.xaml"></Page>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ApplicationDefinition Remove="App.xaml"></ApplicationDefinition>
+	</ItemGroup>
+
 </Project>

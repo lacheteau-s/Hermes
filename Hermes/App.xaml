@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Hermes">
     <Application.Resources>
-         
-    </Application.Resources>
+
+		<ResourceDictionary Source="/Hermes;component/Resources/Templates/Window.xaml" />
+
+	</Application.Resources>
 </Application>
