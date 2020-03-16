@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:behaviors="clr-namespace:Hermes.Resources.Behaviors">
 
 	<Style x:Key="WindowStyle" TargetType="{x:Type Window}">
 		<Setter Property="WindowState" Value="Normal" />
@@ -46,14 +47,22 @@
 	<ControlTemplate x:Key="WindowTemplate" TargetType="{x:Type Window}">
 		<Border Background="Bisque">
 			<Grid Background="Aqua">
-				<Thumb x:Name="ThumbLeft" Style="{StaticResource LeftRightThumb}" HorizontalAlignment="Left" />
-				<Thumb x:Name="ThumbRight" Style="{StaticResource LeftRightThumb}" HorizontalAlignment="Right" />
-				<Thumb x:Name="ThumbTop" Style="{StaticResource TopBottomThumb}" VerticalAlignment="Top" />
-				<Thumb x:Name="ThumbBottom" Style="{StaticResource TopBottomThumb}" VerticalAlignment="Bottom" />
-				<Thumb x:Name="ThumbTopLeft" Style="{StaticResource TopLeftBottomRightThumb}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-				<Thumb x:Name="ThumbTopRight" Style="{StaticResource TopRightBottomLeftThumb}" HorizontalAlignment="Right" VerticalAlignment="Top" />
-				<Thumb x:Name="ThumbBottomLeft" Style="{StaticResource TopRightBottomLeftThumb}" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
-				<Thumb x:Name="ThumbBottomRight" Style="{StaticResource TopLeftBottomRightThumb}" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+				<Thumb x:Name="ThumbLeft" Style="{StaticResource LeftRightThumb}" HorizontalAlignment="Left"
+					   behaviors:ResizeBehavior.LeftResize="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />
+				<Thumb x:Name="ThumbRight" Style="{StaticResource LeftRightThumb}" HorizontalAlignment="Right"
+					   behaviors:ResizeBehavior.RightResize="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"  />
+				<Thumb x:Name="ThumbTop" Style="{StaticResource TopBottomThumb}" VerticalAlignment="Top"
+					   behaviors:ResizeBehavior.TopResize="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"  />
+				<Thumb x:Name="ThumbBottom" Style="{StaticResource TopBottomThumb}" VerticalAlignment="Bottom"
+					   behaviors:ResizeBehavior.BottomResize="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"  />
+				<Thumb x:Name="ThumbTopLeft" Style="{StaticResource TopLeftBottomRightThumb}" HorizontalAlignment="Left" VerticalAlignment="Top"
+					   behaviors:ResizeBehavior.TopLeftResize="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"  />
+				<Thumb x:Name="ThumbTopRight" Style="{StaticResource TopRightBottomLeftThumb}" HorizontalAlignment="Right" VerticalAlignment="Top"
+					   behaviors:ResizeBehavior.TopRightResize="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"  />
+				<Thumb x:Name="ThumbBottomLeft" Style="{StaticResource TopRightBottomLeftThumb}" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+					   behaviors:ResizeBehavior.BottomLeftResize="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"  />
+				<Thumb x:Name="ThumbBottomRight" Style="{StaticResource TopLeftBottomRightThumb}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+					   behaviors:ResizeBehavior.BottomRightResize="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"  />
 			</Grid>
 		</Border>
 	</ControlTemplate>
