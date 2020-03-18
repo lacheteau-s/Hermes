@@ -47,6 +47,19 @@
 	<ControlTemplate x:Key="WindowTemplate" TargetType="{x:Type Window}">
 		<Border Background="Bisque">
 			<Grid Background="Aqua">
+				<Grid>
+				
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+
+					<Grid Grid.Row="0" Background="IndianRed">
+						<Label Content="Hermes" behaviors:DragBehavior.LeftMouseButtonDrag="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />
+					</Grid>
+
+				</Grid>
+								
 				<Thumb x:Name="ThumbLeft" Style="{StaticResource LeftRightThumb}" HorizontalAlignment="Left"
 					   behaviors:ResizeBehavior.LeftResize="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />
 				<Thumb x:Name="ThumbRight" Style="{StaticResource LeftRightThumb}" HorizontalAlignment="Right"
