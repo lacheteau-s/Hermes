@@ -15,4 +15,12 @@
 		<ApplicationDefinition Remove="App.xaml"></ApplicationDefinition>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Resources\Hermes.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Resources\Hermes.ico" />
+	</ItemGroup>
+
 </Project>
